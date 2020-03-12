@@ -247,7 +247,7 @@
             <!-- button -->
             <div class="row" style="padding-bottom: 1rem; ">
                 <div class="col s12">
-                    <button style="background-color: #083F48; border-radius: 10px;" class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <button id="submit" style="background-color: #083F48; border-radius: 10px;" class="btn waves-effect waves-light" type="submit" name="action">Submit
                         <i class="material-icons right">send</i>
                       </button>
                 </div>
@@ -263,10 +263,10 @@
             <div class="col s12 center-align" style="margin: 3rem;">
                 <img src="images/Collar_Global_White.png" alt="" class="footer-image">
                 <div>
-                    <a href=""><img src="images/facebook-02.png" alt=""class="responsive-img" style="height: 30px; padding: 1px;"></a>
-                    <a href=""><img src="images/instagram-02.png" alt="" class="responsive-img" style="height: 30px; padding: 1px;"></a>
-                    <a href=""><img src="images/twitter-02.png" alt="" class="responsive-img" style="height: 30px; padding: 1px;"></a>
-                    <a href=""><img src="images/linkedin-02.png" alt="" class="responsive-img" style="height: 30px; padding: 1px;"></a>    
+                    <a href="https://www.facebook.com/JobsForEveryCollar/"><img src="images/facebook-02.png" alt=""class="responsive-img" style="height: 30px; padding: 1px;"></a>
+                    <a href="https://www.instagram.com/collar.jobs/?igshid=1hk9slefbfj92"><img src="images/instagram-02.png" alt="" class="responsive-img" style="height: 30px; padding: 1px;"></a>
+                    <a href="https://twitter.com/collar_jobs"><img src="images/twitter-02.png" alt="" class="responsive-img" style="height: 30px; padding: 1px;"></a>
+                    <a href="https://www.linkedin.com/company/collarjobs/?viewAsMember=true"><img src="images/linkedin-02.png" alt="" class="responsive-img" style="height: 30px; padding: 1px;"></a>    
                 </div>
             </div>
         </div>
@@ -277,7 +277,48 @@
 <!-- js -->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
-<script src="js/index.js.js"></script>
+<script src="js/index.js"></script>
+<script>
+   $(document).ready(function() {
+    $("#submit").on("click", function(event) {
+        event.preventDefault();
+
+        
+        // create submission Object 
+
+        var submissionObject = {
+            firstname: $.trim($("#first_name").val()),
+            lastname: $.trim($("#last_name").val()),
+            email: $.trim($("#email").val()),
+            industry: $.trim($("#industry").val()),
+            message: $.trim($("#message").val())
+        }
+
+        console.log(submissionObject);
+
+        // check to make sure all fields are filled out
+
+        if (submissionObject.firstname === "" || submissionObject.lastname === "" || submissionObject.email === "" || submissionObject.industry === "" || submissionObject.message === "") {
+            alert("Please fill out all of the fields.")
+            console.log("They didn't fill out all out.")
+        }
+        else {
+
+            // webhook submission
+            $.ajax({
+                url: 'https://hooks.zapier.com/hooks/catch/4990402/o1m3qgu/',
+                method: "POST",
+                dataType: "json",
+                data: submissionObject
+                }).success (
+                    console.log("This worked!")
+                )
+        
+        }
+    })
+   });
+
+</script>
 
 
 </html>
