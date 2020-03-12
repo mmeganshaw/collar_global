@@ -1,0 +1,68 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #09424B
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.header-background {
+    position: relative;
+    background: url('../images/background.png') no-repeat center center/cover;
+    height: 105vh;
+    padding: 1.5rem;
+}
+
+.header-overlay {
+    position: relative;
+    background: url('../images/overlay-02.png') no-repeat center center/cover;
+    height: 100%
+}
+
+.contact {
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    float: right;
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
+.nav-image {
+    height: 70px;
+    padding: 1rem;
+}
+
+.footer-image {
+    height: 70px;
+}
+
+.header-inner {
+    color: white;
+    margin-left: 4rem;
+    padding-right: 1rem;
+}
+
+.blue-container {
+    color: white;
+    background-color: #09424B;
+    border-radius: 10px;
+    box-shadow: 0 34px 38px 0 rgba(8, 63, 73, 0.6), 0 36px 50px 0 rgba(8, 63, 73, 0.6);
+    margin: 2rem;
+}
+
+.blue-container-desktop {
+    color: white;
+    background-color: #09424B;
+    border-radius: 10px;
+    box-shadow: 0 34px 38px 0 rgba(8, 63, 73, 0.6), 0 36px 50px 0 rgba(8, 63, 73, 0.6);
+    margin: 2rem;
+    padding: 1rem;
+}
