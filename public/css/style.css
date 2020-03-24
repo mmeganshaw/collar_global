@@ -8,6 +8,11 @@ h1 {
     font-weight: 900;
 }
 
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
 h3 {
     font-weight: 700;
     font-size: 2rem;
@@ -36,12 +41,13 @@ h3 {
 }
 
 .nav-image {
-    height: 70px;
+    height: 80px;
     padding: 1rem;
 }
 
 .footer-image {
-    height: 70px;
+    height: 80px;
+    padding: 1rem;
 }
 
 .header-inner {
@@ -65,4 +71,8 @@ h3 {
     box-shadow: 0 34px 38px 0 rgba(8, 63, 73, 0.6), 0 36px 50px 0 rgba(8, 63, 73, 0.6);
     margin: 2rem;
     padding: 1rem;
+}
+
+#hidden-div {
+    display: none;
 }
